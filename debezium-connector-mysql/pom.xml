@@ -354,7 +354,7 @@
               Connect this plugin to the maven lifecycle around the integration-test phase:
               start the container in pre-integration-test and stop it in post-integration-test.
               -->
-              <executions>
+              <!--<executions>
                 <execution>
                   <id>start</id>
                   <phase>pre-integration-test</phase>
@@ -370,7 +370,7 @@
                     <goal>stop</goal>
                   </goals>
                 </execution>
-              </executions>
+              </executions>-->
             </plugin>
             <!-- 
             Unlike surefire, the failsafe plugin ensures 'post-integration-test' phase always runs, even

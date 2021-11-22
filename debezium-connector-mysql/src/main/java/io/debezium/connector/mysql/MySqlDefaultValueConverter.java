@@ -115,7 +115,14 @@ public class MySqlDefaultValueConverter {
         if (zero) {
             value = EPOCH_DATE;
         }
-        return LocalDate.from(DateTimeFormatter.ISO_LOCAL_DATE.parse(value));
+        if (value.length() > 10) {
+            return LocalDate.from(DateTimeFormatter.ISO_LOCAL_DATE.parse(value.substring(0, 10)));
+        }
+        else {
+            return LocalDate.from(DateTimeFormatter.ISO_LOCAL_DATE.parse(value));
+        }
+
+        // return LocalDate.from(DateTimeFormatter.ISO_LOCAL_DATE.parse(value));
     }
 
     /**
